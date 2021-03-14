@@ -55,6 +55,8 @@ def main():
                         moveMade = True
                     sqSelected = ()
                     playerClicks = []
+                else:
+                    playerClicks = [sqSelected]
 
             elif e.type == p.KEYDOWN:
                 if e.key == p.K_z:
@@ -76,7 +78,7 @@ def drawGameState(screen, gs):
     drawPieces(screen, gs.board)
 
 def drawBoard(screen):
-    colors = [p.Color("white"), p.Color("gray")]
+    colors = [p.Color("white"), p.Color("dark green")]
     for r in range(DIMENSION):
         for c in range(DIMENSION):
             color = colors[((r+c) % 2)]
